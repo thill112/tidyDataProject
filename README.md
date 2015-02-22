@@ -42,6 +42,6 @@ The run_analysis.R script using the following logic to create the tidy data file
 * Data is grouped by subject and activity. The mean of the other columns is calculate for each group
 * Column labels are cleaned up
     * "tBody" is replaced with "timeBody"
-	  * "tGravity" is replaced with "timeGravity"
-	  * "fBody" is replaced with "frequencyBody"
+    * "tGravity" is replaced with "timeGravity"
+    * "fBody" is replaced with "frequencyBody"
 * UCI_DATA_SummaryAvg_tidy.txt is produced in the working directory
