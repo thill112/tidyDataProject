@@ -26,7 +26,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 
 #Transforming the DATA
-The run_analysis.R script:
+The run_analysis.R script using the following logic to create the tidy data file.
 
 * train/X_train.txt and test/X_test.txt are merged
     * using rbind() - stacks x_train on top of x_test
@@ -40,4 +40,8 @@ The run_analysis.R script:
 * A subset of columns are selected. Subject, Activity, and columns with "mean()" or "std()" in the name
 * The activity_labels.txt file is used to converted from the numeric id to the actual name
 * Data is grouped by subject and activity. The mean of the other columns is calculate for each group
+* Column labels are cleaned up
+    * "tBody" is replaced with "timeBody"
+	  * "tGravity" is replaced with "timeGravity"
+	  * "fBody" is replaced with "frequencyBody"
 * UCI_DATA_SummaryAvg_tidy.txt is produced in the working directory
