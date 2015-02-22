@@ -24,3 +24,20 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 * Execute the run_analysis.R script
 *  UIC_DATA_SummaryAvg_tidy.txt is produced in working directory.
 
+
+#Transforming the DATA
+The run_analysis.R script:
+
+* train/X_train.txt and test/X_test.txt are merged
+    * using rbind() - stacks x_train on top of x_test
+* train/y_train.txt and test/y_test.txt are merged
+    * using rbind() - stacks y_train on top of y_test
+* train/subject_train.txt and test/subject_test.txt are merged
+    * using rbind() - stacks subject_train on top of subject_test
+* The resulting datasets are merged together 
+    * using cbind() - in the order subject, y, and x
+* The Columns are then renamed. "subject" and "activity" are the first two columns, labels from features.txt for the remaining columns
+* A subset of columns are selected. Subject, Activity, and columns with "mean()" or "std()" in the name
+* The activity_labels.txt file is used to converted from the numeric id to the actual name
+* Data is grouped by subject and activity. The mean of the other columns is calculate for each group
+* UCI_DATA_SummaryAvg_tidy.txt is produced in the working directory
