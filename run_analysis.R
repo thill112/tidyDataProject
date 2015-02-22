@@ -109,5 +109,5 @@ subj_activity_group_data <- group_by(subj_act_mean_std_data, subject, activity)
 
 # create summary of each
 summary <- summarise_each(subj_activity_group_data, funs(mean), contains('mean()'),contains('std()'))
-write.table(summary, "./UCI_DATA_tidy.txt", row.names=FALSE)
+write.table(summary, "./UCI_DATA_SummaryAvg_tidy.txt", row.names=FALSE)
 
